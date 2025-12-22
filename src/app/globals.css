@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  /* Monochromatic Theme - Grays, White, Black */
+  --background: #0a0a0a; /* Near black */
+  --foreground: #fafafa; /* Near white */
+
+  --card: #141414; /* Dark gray */
+  --card-foreground: #fafafa;
+
+  --popover: #0a0a0a;
+  --popover-foreground: #fafafa;
+
+  --primary: #ffffff; /* Pure white */
+  --primary-foreground: #0a0a0a;
+
+  --secondary: #1a1a1a; /* Dark gray */
+  --secondary-foreground: #fafafa;
+
+  --muted: #262626; /* Medium dark gray */
+  --muted-foreground: #a3a3a3; /* Neutral gray */
+
+  --accent: #1a1a1a;
+  --accent-foreground: #fafafa;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #fafafa;
+
+  --border: #262626; /* Subtle border */
+  --input: #262626;
+  --ring: #525252; /* Focus ring */
+
+  /* Gradient stops */
+  --gradient-start: #0a0a0a;
+  --gradient-mid: #111111;
+  --gradient-end: #0f0f0f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove all shadows globally */
+*,
+*::before,
+*::after {
+  box-shadow: none !important;
+}
+
+/* Focus styles without shadows */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling - Minimal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Subtle hover glow effect */
+.hover-glow {
+  transition: background-color 0.2s ease;
+}
+
+.hover-glow:hover {
+  background-color: var(--muted);
+}

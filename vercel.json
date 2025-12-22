@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    { 
+      "source": "/details/:type/:id",
+      "destination": "/details/[type]/[id]"
+    },
+    { 
+      "source": "/(.*)",
+      "destination": "/$1"
+    }
+  ]
+}
